@@ -26,4 +26,9 @@ public class MeteorControl : MonoBehaviour {
     {
 
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Yes");
+    }
 }
