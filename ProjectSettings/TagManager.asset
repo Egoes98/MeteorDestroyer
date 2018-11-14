@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Buildings
+  - Background
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 901981133
+    locked: 0
+  - name: Cannon
+    uniqueID: 3900018725
+    locked: 0
+  - name: Buildings
+    uniqueID: 2517762377
+    locked: 0
+  - name: Meteor
+    uniqueID: 2022124445
     locked: 0
