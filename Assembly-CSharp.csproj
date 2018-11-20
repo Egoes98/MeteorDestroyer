@@ -61,10 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CollisionTest.cs" />
-    <Compile Include="Assets\MeteorControl.cs" />
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
+    <Compile Include="Assets\Scripts\BunkerCollision.cs" />
     <Compile Include="Assets\Scripts\CannonRotation.cs" />
+    <Compile Include="Assets\Scripts\CollisionTest.cs" />
+    <Compile Include="Assets\Scripts\MeteorControl.cs" />
     <Compile Include="Assets\Scripts\MeteorSpawn.cs" />
     <Compile Include="Assets\Scripts\ShootCannon.cs" />
     <Reference Include="UnityEditor.StandardEvents">
