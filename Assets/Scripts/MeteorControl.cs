@@ -38,6 +38,7 @@ public class MeteorControl : MonoBehaviour
     {
         if (collision.gameObject.name == "Bullet(Clone)")
         {
+            Scoring.score += 10;
             Destroy(collision.gameObject,0);
             takeDamage(20);
         }
