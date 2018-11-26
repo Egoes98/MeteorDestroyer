@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79ea03c9dc294049ad00c9f6d5f925e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  spawnRate: 6
   timeToSpawn: 0
   meteorPrefab: {fileID: 4381698013820150, guid: 0ecc4d77fdf4c1346a2557433c2c696d,
     type: 2}
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a7da792e2a6b9488fb6bcf875abe0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  fireRate: 3
   damage: 10
   wahtToHit:
     serializedVersion: 2

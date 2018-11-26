@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorControl : MonoBehaviour {
+public class MeteorControl : MonoBehaviour
+{
 
-    public static int life = 20;
+    public float life = 20;
     public float fallSpeed = 10;
     public Rigidbody2D rb;
 
@@ -12,23 +13,33 @@ public class MeteorControl : MonoBehaviour {
     private Vector3 m_Velocity = Vector3.zero;
 
     // Use this for initialization
-    void Start () {
-		rb = rb = GetComponent<Rigidbody2D>();
+    void Start()
+    {
+        rb = rb = GetComponent<Rigidbody2D>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (life <= 0)
+        {
+            //TODO Ejecutar animacion destruido
+            Destroy(gameObject, 0);
+        }
         Vector2 targetVelocity = new Vector2(rb.velocity.x, 1 * -fallSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
 
-    public static void takeDamage()
+    public void takeDamage(float damage)
     {
-
+        life -= damage;
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Yes");
+        if (collision.gameObject.name == "Bullet(Clone)")
+        {
+            Destroy(collision.gameObject,0);
+            takeDamage(20);
+        }
     }
 }

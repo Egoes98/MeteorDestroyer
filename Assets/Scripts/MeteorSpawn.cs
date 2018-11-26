@@ -20,7 +20,7 @@ public class MeteorSpawn : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        spawnX = Random.Range(-21,21);
+        spawnX = Random.Range(-19,19);
         SpawnMeteor();
 	}
 
