@@ -27,6 +27,12 @@ public class ShootCannon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         if (fireRate == 0 & Input.GetButtonDown("Fire1"))
         {
             Shoot();

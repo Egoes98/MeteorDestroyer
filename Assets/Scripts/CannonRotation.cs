@@ -9,6 +9,12 @@ public class CannonRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
+
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
 

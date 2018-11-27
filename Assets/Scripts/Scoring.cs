@@ -11,6 +11,7 @@ public class Scoring : MonoBehaviour {
 
     private void Start()
     {
+        score = 0;
         SetScoreText();
     }
 
