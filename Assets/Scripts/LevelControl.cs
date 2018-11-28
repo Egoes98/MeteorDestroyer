@@ -36,7 +36,7 @@ public class LevelControl : MonoBehaviour {
     public void NextRound()
     {
         Debug.Log("Next round");
-        MeteorSpawn.fallSpeed += 5;
+        MeteorSpawn.fallSpeed += 2;
         Time.timeScale = 1;
         canvas.GetComponent<Canvas>().enabled = false;
     }

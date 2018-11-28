@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShootCannon : MonoBehaviour {
 
-    public float fireRate = 0;
-    public float damage = 10;
+    public static float fireRate = 0;
+    public static float damage = 10;
     public LayerMask wahtToHit;
 
     public Transform bulletPrefab;
@@ -18,6 +18,8 @@ public class ShootCannon : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        fireRate = 0;
+        damage = 10;
         firePoint = transform.Find("FirePoint");
         if (firePoint == null)
         {

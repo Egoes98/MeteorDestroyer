@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BunkerCollision : MonoBehaviour {
 
-    public float damage;
     public float resistance = 100;
     public float nearlyDestroyed;
     public float destroyed;
@@ -34,7 +33,7 @@ public class BunkerCollision : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        resistance -= damage;
+        resistance -= ShootCannon.damage;
         Destroy(collision.gameObject,0);
         //TODO Send message to GM to that it was hit
     }
