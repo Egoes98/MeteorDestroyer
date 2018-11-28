@@ -6,7 +6,6 @@ public class MeteorControl : MonoBehaviour
 {
 
     public float life = 20;
-    public float fallSpeed = 10;
     public Rigidbody2D rb;
 
     public float m_MovementSmoothing = 0.5f;
@@ -26,7 +25,7 @@ public class MeteorControl : MonoBehaviour
             //TODO Ejecutar animacion destruido
             Destroy(gameObject, 0);
         }
-        Vector2 targetVelocity = new Vector2(rb.velocity.x, 1 * -fallSpeed);
+        Vector2 targetVelocity = new Vector2(rb.velocity.x, 1 * -MeteorSpawn.fallSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
 

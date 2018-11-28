@@ -9,14 +9,18 @@ public class MeteorSpawn : MonoBehaviour {
     private Vector2 spawnPosition;
     private Quaternion rotation = new Quaternion(0,0,1,1);
 
-    public float spawnRate = 1;
-    public float timeToSpawn = 0;
+    public static float spawnRate = 1;
+    public static float timeToSpawn = 0;
+    public static float fallSpeed = 5;
 
     public Transform meteorPrefab;
 
     private void Start()
     {
-    }
+        spawnRate = 1;
+        timeToSpawn = 0;
+        fallSpeed = 5;
+}
 
     // Update is called once per frame
     void Update () {
