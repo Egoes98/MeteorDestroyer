@@ -61,18 +61,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
     <Compile Include="Assets\Scripts\BunkerCollision.cs" />
     <Compile Include="Assets\Scripts\CannonRotation.cs" />
     <Compile Include="Assets\Scripts\CollisionTest.cs" />
     <Compile Include="Assets\Scripts\LevelControl.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuPausa.cs" />
     <Compile Include="Assets\Scripts\MeteorControl.cs" />
     <Compile Include="Assets\Scripts\MeteorSpawn.cs" />
     <Compile Include="Assets\Scripts\Scoring.cs" />
     <Compile Include="Assets\Scripts\ShootCannon.cs" />
-    <Compile Include="Assets\UpgradesPBar.cs" />
+    <Compile Include="Assets\Scripts\UpgradesPBar.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Proyectos/MeteorDestroyer/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
