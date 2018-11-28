@@ -13,6 +13,13 @@ public class BunkerCollision : MonoBehaviour {
     public Sprite state2;
     public SpriteRenderer bunker;
 
+    public AudioSource source;
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>(); 
+    }
+
     // Update is called once per frame
     void Update () {
         if (resistance <= nearlyDestroyed && resistance > destroyed)
@@ -33,6 +40,7 @@ public class BunkerCollision : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        source.Play();
         resistance -= ShootCannon.damage;
         Destroy(collision.gameObject,0);
         //TODO Send message to GM to that it was hit

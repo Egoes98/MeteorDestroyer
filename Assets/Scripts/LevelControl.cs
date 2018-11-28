@@ -5,31 +5,18 @@ using UnityEngine;
 public class LevelControl : MonoBehaviour {
 
     public Canvas canvas;
-    private float time;
-    public float interpolationPeriod = 30;
 
 	// Use this for initialization
 	void Start () {
         canvas.GetComponent<Canvas>().enabled = false;
-        time = 0.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        InvokeRepeating("UpgradeMenu", 30.0f, 30.0f);
         if (Time.timeScale == 1)
         {
             canvas.GetComponent<Canvas>().enabled = false;
-        }
-        else
-        {
-            return;
-        }
-
-        if (Time.time > time)
-        {
-            canvas.GetComponent<Canvas>().enabled = true;
-            Time.timeScale = 0;
-            time += interpolationPeriod;
         }
     }
 
@@ -39,5 +26,10 @@ public class LevelControl : MonoBehaviour {
         MeteorSpawn.fallSpeed += 2;
         Time.timeScale = 1;
         canvas.GetComponent<Canvas>().enabled = false;
+    }
+    public void UpgradeMenu()
+    {
+        Time.timeScale = 0;
+        canvas.GetComponent<Canvas>().enabled = true;
     }
 }
