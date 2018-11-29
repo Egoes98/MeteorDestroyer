@@ -11,8 +11,8 @@ public class LevelControl : MonoBehaviour {
     public static float life;
     public bool runTimer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         upgradeUI.GetComponent<Canvas>().enabled = false;
         gameOverUI.GetComponent<Canvas>().enabled = false;
         runTimer = true;
@@ -54,6 +54,13 @@ public class LevelControl : MonoBehaviour {
         runTimer = false;
         yield return new WaitForSeconds(30);
         Time.timeScale = 0;
+
+        GameObject[] meteor = GameObject.FindGameObjectsWithTag("Meteor");
+        foreach (GameObject item in meteor)
+        {
+            Destroy(item);
+        }
+
         upgradeUI.GetComponent<Canvas>().enabled = true;
     }
     public void GameOverScreen()

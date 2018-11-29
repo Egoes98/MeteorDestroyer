@@ -15,6 +15,8 @@ public class BunkerCollision : MonoBehaviour {
 
     public AudioSource source;
 
+    public Transform explosion;
+
     void Awake()
     {
         source = GetComponent<AudioSource>(); 
@@ -44,8 +46,20 @@ public class BunkerCollision : MonoBehaviour {
         source.Play();
         resistance -= 10;
         LevelControl.life -= 0.1f;
+
+        Vector3 exP = collision.transform.position;
+        Quaternion exR = new Quaternion(0,0,0,0);
+        SpawnEffect(exP, exR);
+
         Destroy(collision.gameObject,0);
         //TODO Send message to GM to that it was hit
+    }
+
+    private void SpawnEffect(Vector3 exP, Quaternion exR)
+    {
+        Transform copy = Instantiate(explosion, exP, exR);
+        Destroy(copy.gameObject, 0.75f);
+
     }
 
     public void RepairAll()
