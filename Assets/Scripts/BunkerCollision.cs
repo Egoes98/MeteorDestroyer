@@ -40,14 +40,17 @@ public class BunkerCollision : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        source.volume = SoundManagement.soundLevel;
         source.Play();
-        resistance -= ShootCannon.damage;
+        resistance -= 10;
+        LevelControl.life -= 0.1f;
         Destroy(collision.gameObject,0);
         //TODO Send message to GM to that it was hit
     }
 
     public void RepairAll()
     {
+        LevelControl.life = 1;
         resistance = 100;
     }
 }

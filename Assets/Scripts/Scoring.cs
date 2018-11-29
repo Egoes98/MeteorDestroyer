@@ -7,7 +7,7 @@ public class Scoring : MonoBehaviour {
 
     public static int score = 0;
 
-    public Text scoreText;
+    public Text[] scoreText;
 
     private void Start()
     {
@@ -23,6 +23,10 @@ public class Scoring : MonoBehaviour {
 
     public void SetScoreText()
     {
-        scoreText.text = "Score: " + score.ToString();
+        if (LevelControl.life <= 0)
+        {
+            scoreText[1].text = "Score: " + score.ToString();
+        }
+        scoreText[0].text = "Score: " + score.ToString();
     }
 }
