@@ -117,7 +117,7 @@ NavMeshSettings:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114733500434668686, guid: 711fce02bb0416e42b98fec1d2a28265,
     type: 2}
-  m_PrefabInternal: {fileID: 1328787435}
+  m_PrefabInternal: {fileID: 1373724938}
   m_Script: {fileID: -2061169968, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &215599828
 GameObject:
@@ -552,7 +552,7 @@ RectTransform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114498254110463702, guid: 711fce02bb0416e42b98fec1d2a28265,
     type: 2}
-  m_PrefabInternal: {fileID: 1328787435}
+  m_PrefabInternal: {fileID: 1373724938}
   m_Script: {fileID: -2061169968, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!223 &800958985 stripped
 Canvas:
@@ -691,6 +691,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1500105011}
+    - target: {fileID: 1144074703611612, guid: 242db94d39190904ca6a94b910c83626, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 242db94d39190904ca6a94b910c83626, type: 2}
   m_IsPrefabAsset: 0
@@ -819,7 +823,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224583534901551876, guid: be1555cfe5e7c744bbebae8ed4f19577,
     type: 2}
   m_PrefabInternal: {fileID: 1032084163}
---- !u!1001 &1328787435
+--- !u!1001 &1373724938
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -916,7 +920,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114744389096353988, guid: 711fce02bb0416e42b98fec1d2a28265,
+    - target: {fileID: 114211171912907344, guid: 711fce02bb0416e42b98fec1d2a28265,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -926,7 +930,7 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1500105010}
-    - target: {fileID: 114211171912907344, guid: 711fce02bb0416e42b98fec1d2a28265,
+    - target: {fileID: 114744389096353988, guid: 711fce02bb0416e42b98fec1d2a28265,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -940,6 +944,26 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114278124347944, guid: 711fce02bb0416e42b98fec1d2a28265, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615351565577704, guid: 711fce02bb0416e42b98fec1d2a28265, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170698318439554, guid: 711fce02bb0416e42b98fec1d2a28265, type: 2}
+      propertyPath: m_Name
+      value: Continue_Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693727620326306, guid: 711fce02bb0416e42b98fec1d2a28265, type: 2}
+      propertyPath: m_Name
+      value: Restart_Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850635191055078, guid: 711fce02bb0416e42b98fec1d2a28265, type: 2}
+      propertyPath: m_Name
+      value: MainMenu_Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711fce02bb0416e42b98fec1d2a28265, type: 2}
@@ -1254,7 +1278,7 @@ MonoBehaviour:
 Canvas:
   m_CorrespondingSourceObject: {fileID: 223938019646819314, guid: 711fce02bb0416e42b98fec1d2a28265,
     type: 2}
-  m_PrefabInternal: {fileID: 1328787435}
+  m_PrefabInternal: {fileID: 1373724938}
 --- !u!1 &1697137352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1662,7 @@ MonoBehaviour:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224434015851747060, guid: 711fce02bb0416e42b98fec1d2a28265,
     type: 2}
-  m_PrefabInternal: {fileID: 1328787435}
+  m_PrefabInternal: {fileID: 1373724938}
 --- !u!1 &1975265732
 GameObject:
   m_ObjectHideFlags: 0
