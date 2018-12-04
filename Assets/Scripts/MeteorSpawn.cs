@@ -15,6 +15,10 @@ public class MeteorSpawn : MonoBehaviour {
 
     public Transform meteorPrefab;
 
+    public Camera cam;
+    private Vector3 camP;
+    private Vector3 camPMin;
+
     private void Start()
     {
         spawnRate = 1;
@@ -24,8 +28,13 @@ public class MeteorSpawn : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        spawnX = Random.Range(-19,19);
+        camP = cam.ViewportToWorldPoint(new Vector3(1,1,cam.nearClipPlane));
+        Debug.Log(camP.x + " " + camP.y);
+
+        spawnX = Random.Range((-camP.x + 0.5f),(camP.x - 0.5f));
+        spawnY = camP.y + 0.8f;
         SpawnMeteor();
+        
 	}
 
     void SpawnMeteor()
