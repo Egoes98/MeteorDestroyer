@@ -92,6 +92,7 @@ MonoBehaviour:
   life: 20
   rb: {fileID: 50565264673476364}
   m_MovementSmoothing: 0.5
+  mDestroy: {fileID: 4257810451410494, guid: a7d68d24ad6cdb04bb3f563df202bf95, type: 2}
 --- !u!212 &212997287050395184
 SpriteRenderer:
   m_ObjectHideFlags: 1

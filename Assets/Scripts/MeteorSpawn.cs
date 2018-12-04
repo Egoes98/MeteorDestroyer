@@ -31,7 +31,7 @@ public class MeteorSpawn : MonoBehaviour {
         camP = cam.ViewportToWorldPoint(new Vector3(1,1,cam.nearClipPlane));
         Debug.Log(camP.x + " " + camP.y);
 
-        spawnX = Random.Range((-camP.x + 0.5f),(camP.x - 0.5f));
+        spawnX = Random.Range((-camP.x + 0.8f),(camP.x - 0.8f));
         spawnY = camP.y + 0.8f;
         SpawnMeteor();
         

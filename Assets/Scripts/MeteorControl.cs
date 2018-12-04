@@ -11,6 +11,8 @@ public class MeteorControl : MonoBehaviour
     public float m_MovementSmoothing = 0.5f;
     private Vector3 m_Velocity = Vector3.zero;
 
+    public Transform mDestroy;
+
     // Use this for initialization
     void Start()
     {
@@ -22,7 +24,7 @@ public class MeteorControl : MonoBehaviour
     {
         if (life <= 0)
         {
-            //TODO Ejecutar animacion destruido
+            SpawnEffect();
             Destroy(gameObject, 0);
         }
         Vector2 targetVelocity = new Vector2(rb.velocity.x, 1 * -MeteorSpawn.fallSpeed);
@@ -41,5 +43,10 @@ public class MeteorControl : MonoBehaviour
             Destroy(collision.gameObject,0);
             takeDamage(20);
         }
+    }
+    public void SpawnEffect()
+    {
+        Transform copy = Instantiate(mDestroy, this.transform.position, this.transform.rotation);
+        Destroy(copy.gameObject, 0.7333f);
     }
 }

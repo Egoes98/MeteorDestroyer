@@ -13,13 +13,11 @@ public class BunkerCollision : MonoBehaviour {
     public Sprite state2;
     public SpriteRenderer bunker;
 
-    public AudioSource source;
-
     public Transform explosion;
 
     void Awake()
     {
-        source = GetComponent<AudioSource>(); 
+        
     }
 
     // Update is called once per frame
@@ -42,8 +40,6 @@ public class BunkerCollision : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        source.volume = SoundManagement.soundLevel;
-        source.Play();
         resistance -= 10;
         LevelControl.life -= 0.1f;
 

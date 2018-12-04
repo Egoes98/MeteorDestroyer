@@ -2,24 +2,24 @@ fileFormatVersion: 2
 guid: 00772405f251c4145a6aed61e69b34c1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: explosion_0
-    21300002: explosion_1
-    21300004: explosion_2
-    21300006: explosion_3
-    21300008: explosion_4
-    21300010: explosion_5
-    21300012: explosion_6
-    21300014: explosion_7
-    21300016: explosion_8
-    21300018: explosion_10
-    21300020: explosion_11
-    21300022: explosion_12
-    21300024: explosion_13
+    21300000: ex_0
+    21300002: ex_1
+    21300004: ex_2
+    21300006: ex_3
+    21300008: ex_4
+    21300010: ex_5
+    21300012: ex_6
+    21300014: ex_8
+    21300016: ex_9
+    21300018: ex_10
+    21300020: ex_11
+    21300022: ex_12
+    21300024: ex_13
     21300026: explosion_14
-    21300028: explosion_18
+    21300028: ex_14
     21300030: explosion_26
     21300032: explosion_29
-    21300034: explosion_9
+    21300034: ex_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -102,10 +102,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion_0
+      name: ex_0
       rect:
         serializedVersion: 2
-        x: 46
+        x: 45
         y: 519
         width: 190
         height: 140
@@ -122,7 +122,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_1
+      name: ex_1
       rect:
         serializedVersion: 2
         x: 288
@@ -142,7 +142,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_2
+      name: ex_2
       rect:
         serializedVersion: 2
         x: 541
@@ -162,7 +162,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_3
+      name: ex_3
       rect:
         serializedVersion: 2
         x: 791
@@ -182,7 +182,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_4
+      name: ex_4
       rect:
         serializedVersion: 2
         x: 1042
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_5
+      name: ex_5
       rect:
         serializedVersion: 2
         x: 18
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_6
+      name: ex_6
       rect:
         serializedVersion: 2
         x: 258
@@ -242,7 +242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_7
+      name: ex_8
       rect:
         serializedVersion: 2
         x: 765
@@ -262,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_8
+      name: ex_9
       rect:
         serializedVersion: 2
         x: 1015
@@ -282,7 +282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_10
+      name: ex_10
       rect:
         serializedVersion: 2
         x: 27
@@ -302,7 +302,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_11
+      name: ex_11
       rect:
         serializedVersion: 2
         x: 268
@@ -322,7 +322,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_12
+      name: ex_12
       rect:
         serializedVersion: 2
         x: 518
@@ -342,7 +342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_13
+      name: ex_13
       rect:
         serializedVersion: 2
         x: 768
@@ -362,27 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_14
-      rect:
-        serializedVersion: 2
-        x: 884
-        y: 252
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e80acfcb56ce5442890492f8ee1017a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_18
+      name: ex_14
       rect:
         serializedVersion: 2
         x: 1059
@@ -402,47 +382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_26
-      rect:
-        serializedVersion: 2
-        x: 1125
-        y: 163
-        width: 5
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db551be8724c54244842a2f39447a1a0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_29
-      rect:
-        serializedVersion: 2
-        x: 746
-        y: 106
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 463121f97fb243c47865757b031508e1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_9
+      name: ex_7
       rect:
         serializedVersion: 2
         x: 505
@@ -450,7 +390,7 @@ TextureImporter:
         width: 257
         height: 245
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
