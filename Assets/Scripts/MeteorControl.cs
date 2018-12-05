@@ -27,6 +27,12 @@ public class MeteorControl : MonoBehaviour
             SpawnEffect();
             Destroy(gameObject, 0);
         }
+        if (LevelControl.rocketLaunching)
+        {
+            this.GetComponent<Rigidbody2D>().gravityScale = 0;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            return;
+        }
         Vector2 targetVelocity = new Vector2(rb.velocity.x, 1 * -MeteorSpawn.fallSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
@@ -42,6 +48,16 @@ public class MeteorControl : MonoBehaviour
             Scoring.score += 10;
             Destroy(collision.gameObject,0);
             takeDamage(20);
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Rocket(Clone)")
+        {
+            LevelControl.nMeteors--;
+            Destroy(collision.gameObject);
+            takeDamage(life);
+
         }
     }
     public void SpawnEffect()

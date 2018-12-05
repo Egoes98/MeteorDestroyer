@@ -13,7 +13,11 @@ public class LevelControl : MonoBehaviour {
 
     public KeyCode launchRocket;
     public int rockets;
-    private bool rocketLaunching;
+    public static bool rocketLaunching;
+    public Transform rocket;
+    public Transform rSpawnPoint;
+
+    public static int nMeteors = 0;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +31,10 @@ public class LevelControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (nMeteors == 0)
+        {
+            rocketLaunching = false;
+        }
         life_bar.fillAmount = life;
         if(life <= 0)
         {
@@ -85,16 +93,21 @@ public class LevelControl : MonoBehaviour {
 
     public void UseRocket() //Called when using a nuke TODO ADD THE ANIMATION
     {
-        Debug.Log("LAUNHING NUKE!!!");
+        Debug.Log("LAUNHING ROCKET!!!");
         rockets--;
-        Time.timeScale = 0;
+        StartCoroutine(SpawnRocket());
+    }
+
+    IEnumerator SpawnRocket()
+    {
+
         GameObject[] meteor = GameObject.FindGameObjectsWithTag("Meteor");
         foreach (GameObject item in meteor)
         {
-            //TODO Instaciar los misiles que van a destruir los meteoritos
-            Destroy(item);
+            Transform rocketInstance = Instantiate(rocket, rSpawnPoint.position, rSpawnPoint.rotation);
+            rocketInstance.GetComponent<RocketControl>().Initialise(t: item.transform);
+            nMeteors++;
+            yield return new WaitForSeconds(0.5f);
         }
-        Time.timeScale = 1;
-        rocketLaunching = false;
     }
 }

@@ -28,6 +28,10 @@ public class MeteorSpawn : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (LevelControl.rocketLaunching)
+        {
+            return;
+        }
         camP = cam.ViewportToWorldPoint(new Vector3(1,1,cam.nearClipPlane));
         Debug.Log(camP.x + " " + camP.y);
 

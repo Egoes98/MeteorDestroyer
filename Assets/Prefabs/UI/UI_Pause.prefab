@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114558253893379406}
   - component: {fileID: 114211171912907344}
   m_Layer: 5
-  m_Name: Continue
+  m_Name: Continue_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 114163821736420376}
   - component: {fileID: 114459662560009048}
   m_Layer: 5
-  m_Name: Restart
+  m_Name: Restart_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 114903586918222856}
   - component: {fileID: 114744389096353988}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: MainMenu_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
