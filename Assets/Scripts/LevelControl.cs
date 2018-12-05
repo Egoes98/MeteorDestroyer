@@ -9,7 +9,11 @@ public class LevelControl : MonoBehaviour {
     public Canvas gameOverUI;
     public Image life_bar;
     public static float life;
-    public bool runTimer;
+    private bool runTimer;
+
+    public KeyCode launchRocket;
+    public int rockets;
+    private bool rocketLaunching;
 
     // Use this for initialization
     void Start () {
@@ -18,6 +22,7 @@ public class LevelControl : MonoBehaviour {
         runTimer = true;
         life_bar.fillAmount = 1;
         life = 1;
+        rocketLaunching = false;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +43,14 @@ public class LevelControl : MonoBehaviour {
         if (runTimer)
         {
             StartCoroutine("UpgradeMenu");
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(launchRocket) & rockets > 0 & !rocketLaunching){
+            rocketLaunching = true;
+            UseRocket();
         }
     }
 
@@ -68,5 +81,20 @@ public class LevelControl : MonoBehaviour {
         Time.timeScale = 0;
         gameOverUI.GetComponent<Canvas>().enabled = true;
 
+    }
+
+    public void UseRocket() //Called when using a nuke TODO ADD THE ANIMATION
+    {
+        Debug.Log("LAUNHING NUKE!!!");
+        rockets--;
+        Time.timeScale = 0;
+        GameObject[] meteor = GameObject.FindGameObjectsWithTag("Meteor");
+        foreach (GameObject item in meteor)
+        {
+            //TODO Instaciar los misiles que van a destruir los meteoritos
+            Destroy(item);
+        }
+        Time.timeScale = 1;
+        rocketLaunching = false;
     }
 }
