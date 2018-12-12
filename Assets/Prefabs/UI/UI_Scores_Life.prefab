@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 223458452574108174}
   - component: {fileID: 114246767553958588}
   - component: {fileID: 114759308375853364}
+  - component: {fileID: 114206440035840354}
   m_Layer: 5
   m_Name: UI_Scores_Life
   m_TagString: Untagged
@@ -112,6 +113,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114206440035840354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573935631129836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02d5b079a657dc4d97ea3f999df032a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocket: {fileID: 1677456716925738, guid: 47cd10cc8d677e44fbd3d85020a9eea1, type: 2}
+  liveText: {fileID: 1215464013935308}
 --- !u!114 &114246767553958588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,10 +403,10 @@ RectTransform:
   m_Father: {fileID: 224608027104366110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 176}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -303.07, y: 180.65001}
+  m_SizeDelta: {x: 53.85, y: 22.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224880177824450728
 RectTransform:

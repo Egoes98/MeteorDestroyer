@@ -9,12 +9,11 @@ public class LevelControl : MonoBehaviour {
     public Canvas gameOverUI;
     public Image life_bar;
     public static float life;
-    private bool runTimer;
-
     public KeyCode launchRocket;
-    public int rockets;
     public static bool rocketLaunching;
     public Transform rocket;
+    public static int rockets = 100;
+    public static bool useBuy = false;
     public Transform rSpawnPoint;
 
     public static int nMeteors = 0;
@@ -23,14 +22,16 @@ public class LevelControl : MonoBehaviour {
     void Start () {
         upgradeUI.GetComponent<Canvas>().enabled = false;
         gameOverUI.GetComponent<Canvas>().enabled = false;
-        runTimer = true;
         life_bar.fillAmount = 1;
         life = 1;
         rocketLaunching = false;
-	}
+        useBuy = false;
+        InvokeRepeating("UpgradeMenu", 30.0f, 30.0f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
         if (nMeteors == 0)
         {
             rocketLaunching = false;
@@ -38,7 +39,7 @@ public class LevelControl : MonoBehaviour {
         life_bar.fillAmount = life;
         if(life <= 0)
         {
-            GameOverScreen();
+            //GameOverScreen();
         }
         if (Time.timeScale == 1)
         {
@@ -47,10 +48,6 @@ public class LevelControl : MonoBehaviour {
         else
         {
             return;
-        }
-        if (runTimer)
-        {
-            StartCoroutine("UpgradeMenu");
         }
     }
 
@@ -67,13 +64,10 @@ public class LevelControl : MonoBehaviour {
         Debug.Log("Next round");
         MeteorSpawn.fallSpeed += 2;
         Time.timeScale = 1;
-        runTimer = true;
         upgradeUI.GetComponent<Canvas>().enabled = false;
     }
-    public IEnumerator UpgradeMenu()
+    public void UpgradeMenu()
     {
-        runTimer = false;
-        yield return new WaitForSeconds(30);
         Time.timeScale = 0;
 
         GameObject[] meteor = GameObject.FindGameObjectsWithTag("Meteor");
@@ -95,6 +89,7 @@ public class LevelControl : MonoBehaviour {
     {
         Debug.Log("LAUNHING ROCKET!!!");
         rockets--;
+        useBuy = true;
         StartCoroutine(SpawnRocket());
     }
 
@@ -109,5 +104,10 @@ public class LevelControl : MonoBehaviour {
             nMeteors++;
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public void AddRockets() {
+        rockets++;
+        useBuy = true;
     }
 }

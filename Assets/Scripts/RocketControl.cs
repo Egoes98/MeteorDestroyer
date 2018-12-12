@@ -6,15 +6,16 @@ public class RocketControl : MonoBehaviour {
 
     private Transform target;
     public float speed;
+    private bool change = false;
 
 	// Use this for initialization
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(target == null)
+
+    // Update is called once per frame
+    void Update() {
+        if (target == null)
         {
             return;
         }
@@ -22,17 +23,24 @@ public class RocketControl : MonoBehaviour {
         GameObject[] rocket = GameObject.FindGameObjectsWithTag("Rocket");
         foreach (GameObject item in rocket)
         {
-            Physics2D.IgnoreCollision(item.GetComponent<Collider2D>(),transform.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(item.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
         }
 
-        //Calculos de el angulo de rotacion
-        Vector3 difference = target.position - transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90);
+        if (change)
+        {
+            // HACER PUNTO ESTATICO
+        }
+        else
+        {
+            //Calculos de el angulo de rotacion
+            Vector3 difference = target.position - transform.position;
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90);
 
-        //El movimiento hacia el meteorito
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            //El movimiento hacia el meteorito
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
 	}
 
     public void Initialise(Transform t)
@@ -40,6 +48,12 @@ public class RocketControl : MonoBehaviour {
         Debug.Log("Cargarmos el target");
         this.target = t;
         Debug.Log(this.target.name);
+    }
+
+    IEnumerator TargetChange()
+    {
+        yield return new WaitForSeconds(0.7f);
+
     }
 
 }

@@ -13,6 +13,8 @@ public class MeteorControl : MonoBehaviour
 
     public Transform mDestroy;
 
+    Vector2 targetVelocity;
+
     // Use this for initialization
     void Start()
     {
@@ -29,11 +31,20 @@ public class MeteorControl : MonoBehaviour
         }
         if (LevelControl.rocketLaunching)
         {
-            this.GetComponent<Rigidbody2D>().gravityScale = 0;
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            //rb.gravityScale = 0.0f;
+            if (rb.transform.position.y > -6)
+            {
+                targetVelocity = new Vector2(rb.velocity.x, 0);
+            }
+            else
+            {
+                targetVelocity = new Vector2(rb.velocity.x, -1);
+            }
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
             return;
         }
-        Vector2 targetVelocity = new Vector2(rb.velocity.x, 1 * -MeteorSpawn.fallSpeed);
+        //rb.gravityScale = 1.0f;
+        targetVelocity = new Vector2(rb.velocity.x, 1 * -MeteorSpawn.fallSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
 
