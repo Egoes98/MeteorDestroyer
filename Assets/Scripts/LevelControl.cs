@@ -12,7 +12,7 @@ public class LevelControl : MonoBehaviour {
     public KeyCode launchRocket;
     public static bool rocketLaunching;
     public Transform rocket;
-    public static int rockets = 100;
+    public static int rockets = 0;
     public static bool useBuy = false;
     public Transform rSpawnPoint;
 
